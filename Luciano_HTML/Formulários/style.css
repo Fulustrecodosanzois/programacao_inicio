@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+body {
+    margin: 0;
+}
+
+/* ---- estilização tabela -----*/
+
+table {
+    color: rgb(8, 124, 226);
+    width: 500px;
+    border-radius: 10px;
+    border: 3px solid rgb(83, 18, 235);
+}
+
+table thead {
+    background-color: blue;
+    color:rgb(255, 255, 255)
+}
+
+tr, td {
+    padding: 10px; /* para espaçamento interno entre os elementos*/
+    text-align: center; /*alinhamento do texto*/
+}
+
+tbody td {
+    border-bottom: 1px solid #bbb;
+}
+
+tbody tr:hover {
+    background-color: turquoise; /* Hover= trás o efeito de identificar a  seleção*/
+}
+
+tbody tr td {
+    cursor: pointer; /* para que apareça a "mãozinha" no cursor, indicando que há uma seleção*/    
+}
+
+/*--------- ESTILIZAÇÃO DO FORMULÁRIO ---------*/
+
+label {
+    display: block;
+    margin-bottom: 20px; /* espaçamento externo entre elementos*/
+    text-align: left;
+}
+
+input {
+    width: 50%;
+    
+}
+
+.sexo {
+    width: 10%;
+} /* feito para ajustar apenas as tags de marcação*/
+
+button {
+    width: 100%;
+    padding: 1vw; /*para espaçamento interno*/ 
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+form {
+    border: 2px solid #bbb;
+    display: flex; /* caso não seja colocado, os elementos tem flexibilidade limitada, ou seja todos os elementos ficarão totalmente moldaveis, fleixiveis*/
+    border-radius: 8px;
+    flex-direction: column;
+    padding: 1rem; /*  Afasta o elemento da boda do conteiner*/
+    align-items: center;
+    
+    
+}

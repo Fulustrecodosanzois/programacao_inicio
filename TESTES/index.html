@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="meuFormulario">
+        <input type="text" name="nome" placeholder="Nome">
+        <input type="email" name="email" placeholder="E-mail">
+        <button type="button" onclick="enviarDados()">Enviar</button>
+      </form>
+      
+      
+
+    <script>
+        function enviarDados() {
+            var formulario = document.getElementById('meuFormulario');
+            var nome = formulario.querySelector('[name=nome]').value;
+            var email = formulario.querySelector('[name=email]').value;
+          
+            var data = {
+              nome: nome,
+              email: email
+            };
+          
+            fetch('https://script.google.com/macros/s/AKfycbziy2Qii46tnjyn0_zWAPC4WaT69fXf2kNAvykGTuqupUIezPXzdk5PZwwoQB808cq5/exec', {
+              method: 'POST',
+              contentType: 'application/json',
+              payload: JSON.stringify(data),
+            }).then(response => {
+              if (response.ok) {
+                alert('Dados enviados com sucesso!');
+              } else {
+                alert('Erro ao enviar dados. Por favor, tente novamente.');
+              }
+            });
+          }
+          
+    </script>
+</body>
+
+</html>

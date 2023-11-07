@@ -1,0 +1,116 @@
+body {
+    border: 2px solid;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bloco1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0%;
+}
+
+.fotoPerfil {
+  width: 100%;
+  max-width: 300px;
+}
+
+.blocoDeItens {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.endereco {
+    display: flex;
+    padding: 30px;
+    justify-items: center;
+    align-items: center;
+    margin-top: -5%;
+}
+  
+.endereco2 {
+    display: flex;
+    margin: 5px;
+    border-radius: 17%;
+    background-color: rgb(255, 140, 0);
+    align-content: center;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.nomeLocal {
+    text-align: center;
+    color: rgb(80, 79, 79);
+    margin: 4%;
+}
+
+.caixaContato {
+  display: flex;
+  justify-content: space-between;
+}
+
+.caixaContato .contato {
+  margin-right: 50px; /* adiciona uma margem à direita */
+}
+
+.caixaContato div:last-child {
+  margin-right: 0; /* remove a margem da última div */
+}
+
+.caixaSim {
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  background-color: mediumseagreen;
+  color: aliceblue;
+  width: 15%;
+}
+
+.caixaNao {
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  background-color: red;
+  color: aliceblue;
+  width: 15%;
+}
+
+#fechamento {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fe_almoco {
+  color: rgb(95, 95, 95);
+  font-weight: bold;
+}
+
+.descricao {
+  
+}
+
+.rating {
+  display: inline-block;
+}
+
+.star {
+  font-size: 30px;
+  color: #ddd;
+  cursor: pointer;
+  
+}
+
+.star:before {
+  content: '\2605';
+}
+
+.star:hover:before,
+.star:hover ~ .star:before {
+  color: #ffca08;
+}
+

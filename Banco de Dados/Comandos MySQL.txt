@@ -1,0 +1,248 @@
+- Acessar o MYSQL= mysql -h localhost -u root
+
+- Criar banco de dados= create database;
+
+- Criar tabela = create table <tabela>(matricula int(5) primary key not null (para chave primária), nome varchar(100), endereco varchar(100), cidade varchar(100));
+
+- Adicionar chave primária após criar coluna= ALTER TABLE turma ADD PRIMARY KEY(id_turma);
+
+- Mostrar histórico de atualização da tabela = show create table
+
+- Mudar nome da tabela= alter table <tabela> change nome_atual nome_novo tipo de dado;
+
+- Mostrar tabela= show tables 'nome da tabela';
+
+- Selecionar o banco de dados= use 'nome do banco';
+
+- Quando dentro do banco, mostrar tabelas= show tables;
+
+- Descrever tabela= desc 'nome da tabela';
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| matricula | int(5)       | NO   | PRI | NULL    |       |
+| nome      | varchar(100) | YES  |     | NULL    |       |
+| endereco  | varchar(100) | YES  |     | NULL    |       |
+| cidade    | varchar(100) | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+
+MariaDB [universidade]> desc turma;
++-----------------+---------+------+-----+---------+-------+
+| Field           | Type    | Null | Key | Default | Extra |
++-----------------+---------+------+-----+---------+-------+
+| id_turma        | int(11) | YES  |     | NULL    |       |
+| cod_disc        | int(4)  | YES  |     | NULL    |       |
+| cod_prof        | int(11) | YES  |     | NULL    |       |
+| matricula_aluno | int(11) | YES  |     | NULL    |       |
+| ano             | int(11) | YES  |     | NULL    |       |
+| horario         | time    | YES  |     | NULL    |       |
++-----------------+---------+------+-----+---------+-------+
+
+- inserir chave estrangeira= alter table turma
+ -> add constraint foreign key (matricula_aluno)
+ -> references aluno (matricula);
+
+- Para ter detalhes da relação entre chaves trangeiras= show create table 'tabela de chaves estrangeira';
+
+- Adicionar um atributo especificando o antes o despois = alter table produto add 'qual coluna a ser adicionado' int after 'parametro de posição';
+
+- Inserir uma coluna na tabela =  alter table 'nome da tabela' add 'nova coluna' 'tipo de dados' after 'coluna';
+
+- Alterar o tipo de dados da coluna= alter table 'tabela' modify 'coluna' 'tipo de dados e quantidade'; 
+
+- Deletar uma 'coluna'= alter table 'tabela' drop 'coluna';
+
+- Fazer backup do banco de dados (dump- despejar, descarregar) ('>' indicar diretório de arquivo e dar nome do arquivo sempre com '.sql' ) = mysqldump -h localhost -u root loja > loja.sql
+
+- Mostrar informações alocadas na tabela= select *<significa todos> from <tabela>;
+
+- Inserir informações na tabela = insert into cliente values("jose da Silva","111.222.333-44", "2023-03-09");
+
+- Selecionar uma coluna específica = select <nome da coluna, para varios separa-se a coluna por virgula> from cliente;
+
+- Realiza contagem de registro da coluna = select count(nome) from cliente;
+
+- Exibir contagem renomeando a coluna momentaneamente = select count(nome) as <nome desejado> from cliente;
+
+- Fazer buscas por informação específica = select * from cliente where cpf="111.222.333-44";
+
+- Busca por maior que e menor que = select * from produto where estoque >= 50;
+
+- somar valores e exibir em uma tabela nomeada = select sum(valor) as <nome da tabela> from produto;
+
+- Exibir calculo de média = select avg(valor) as <renomear tabela> from <tabela>;
+
+- Abrir arquivo no pront windows = mysql -h localhost -u root < arquivo.sql
+
+- Ordenar a coluna específica = select * from <tabela> order by coluna; -----ou um ou outro = desc/asc;<decrescente e crescente>----
+
+- Buscar palavra com partes = select * from produto where nome like "%fei%"; <like= como/semelhante - % = indefinido
+
+- Consulta com operadores condicional = select <coluna> from <tabela> produto where estoque >= 70 and valor <=100;
+
+- Exibir detalhes dos valores de uma tabela - SELECT * from <tabela>
+
+- Busca de dados "entre" dados= select * from produto where cod_produto between 1 and 4;
+
+- Habilitar a gravação de registros no backup = tee historico.txt
+
+- Desativar a gravação do registro = notee
+
+- Sprint = desenvolvimento de uma função pela equipe.
+
+- SQL Lite = site para uso do SQL
+
+- Torna o campo autoencrementado - alter table cliente_compra_produto modify nome coluna e dados AUTO_INCREMENT
+
+- Inserir informação de ligação entre dados - insert into cliente_compra_produto(cliente_cpf,cod_produto) values("111.222.333-44",2);
+
+INSERT INTO aluno VALUES (1, "Carlos"), (2, "Maria"), (3, "José"), (4, "Julia"), (5, "Chico")
+
+------UPDATE---
+
+- Atualizar tabela- update produto set valor = 4.85 where cod_produto=4; 
+
+- Atualizar informação da tavela virtual - update cliente set nome = "Fabio dos anzois" where cpf= "111.222.333-44";
+
+---DELETE----
+
+- Deletar tabela- delete from produto where cod_produto = <linha de identificação 6>;
+
+- Deletar chave estrangeira = ALTER TABLE curso DROP FOREIGN KEY <curso_ibfk_1>
+
+- Deletar valor em tabela = DELETE from aluno WHERE matricula = 1 <posição aluno>
+
+
+-------- CHAVE ESTRANGEIRA ----------
+
+- Criar tabela já com referência de chave estrangeira = create TABLE curso (id_curso int (11) primary KEY AUTO_INCREMENT, nome varchar(100), matricula_aluno int (11), CONSTRAINT FOREIGN KEY(matricula_aluno) REFERENCES aluno(matricula))
+
+- Criar evento de cascata para deletar dados que fazem referências a muitas tabelas :
+
+
+	Cascate = ALTER TABLE curso ADD CONSTRAINT FOREIGN KEY (matricula_aluno) REFERENCES aluno(matricula) on UPDATE CASCADE ON DELETE CASCADE
+
+
+	SET NULL= alter TABLE curso add CONSTRAINT FOREIGN KEY(matricula_aluno) REFERENCES aluno(matricula) on UPDATE SET null on DELETE set null
+
+
+---------------------------------------------------------------
+
+MariaDB [loja]> desc cliente;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| nome       | varchar(100) | YES  |     | NULL    |       |
+| cpf        | varchar(15)  | NO   | PRI | NULL    |       |
+| nascimento | date         | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.009 sec)
+
+MariaDB [loja]> desc produto;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| cod_produto | int(11)      | NO   | PRI | NULL    |       |
+| nome        | varchar(100) | YES  |     | NULL    |       |
+| estoque     | int(11)      | YES  |     | NULL    |       |
+| valor       | float        | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+4 rows in set (0.008 sec)
+
+MariaDB [loja]> desc cliente_compra_produto;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| id          | int(11)     | NO   | PRI | NULL    |       |
+| cliente_cpf | varchar(15) | YES  | MUL | NULL    |       |
+| cod_produto | int(11)     | YES  | MUL | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.040 sec)
+
+
+- Mostrar em tabela a ligação da chave primária com chave estrangeira = select * from cliente join cliente_compra_produto;
+
+- select cliente.nome, cliente.cpf, cliente_compra_produto.cod_produto from cliente join  cliente_compra_produto on cliente.cpf = cliente_compra_produto.cliente_cpf;
+
+View (tabela virtual)
+
+create view cliente_view as select cliente.nome as nome_cliente, produto.nome from cliente join cliente_compra_produto on cliente.cpf = cliente_compra_produto.cliente_cpf join produto on produto.cod_produto = cliente_compra_produto.cod_produto;
+
+- mostrar informações com tabelas relacionadas = select carro.placa,cliente.nome from cliente join carro on cliente.cod_cliente = carro.cod_cliente;
+
+
+-------------- ACL (Acces Control Level)------------------
+
+
+criar usuário em servidor = create user "gerente"@"localhost" identified by "123";
+
+Dar acesso total usuário = grant all privileges on loja.* to "gerente"@"localhost";
+
+Dar acesso limitado = grant <cmomandos permitidos> loja.produto to "estagiario"@"localhost";
+
+Dar acesso a todos os comando de uma tabela = grant all privileges on loja.cliente to "engenheiro"@"localhost";
+
+informações de acesso = show grants for "gerente"@"localhost";
+
+remover acesso específico = revoke all privileges on loja.* from "gerente"@"localhost";
+
+remover usuário = drop user "engenheiro"@"localhost";
+
+mudar senha usuário = SET PASSWORD FOR 'usuário'@'local' = PASSWORD('nova senha');
+
+--------------- Função ---------------
+
+ Criar delimitador = delimiter <simbolo para delimitar>
+
+ Criar procedimento = create procedure <nome da função>(<parâmetro com valor de dados>)
+  - begin
+  - comandos
+  - end
+
+EX: create procedure add_produto(in cod int, in nome varchar(100), in estoque int, in valor float)
+    -> begin
+    -> insert into produto values(cod, nome, estoque, valor);
+    -> select * from produto;
+    -> end
+
+  IN = inserir dados
+  OUT = Não inserir informação
+
+- Inserir valor pela função = call add_produto(7, "cafe", 46, 6.54);
+
+- Deletar o procedimento/função = drop procedure add_produto;
+   <em caso de auto_increment = call add_vendas(@id, 1, 2, 25.99, "2023-03-28")
+
+- atualizar dados na função = create procedure atualizar(in cod int, in estoque int)
+    -> begin
+    -> update produto set <coluna> = estoque where cod_produto = cod;
+    -> select * from produto;
+    -> select sum(estoque) as total from produto;
+    -> end;;
+
+
+- create procedure add_vendas(out id int,in produto int, in quantidade int, in preco float, in data date)
+     begin
+     insert into vendas values(id, produto, quantidade, preco, data);
+     select * from vendas;
+     end;;
+
+
+
+
+
+
+create procedure update_telefone(in telefone varchar(50), set )
+    begin
+    update clinica set telefone = (telefone);
+    select * from clinica;
+    end;;
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+------------------------------------------------------------------------------------------------
+
+- Iniciar git - git init
+
+- Status do git - git status
+
+- Configurar nome - git config --global user.name "Luciano Silva"
+
+- Configurar email - git config --global user.email "Luciano@email.com"
+
+- Saber quais pastas existem = ls -a
+
+- Checar se foi configurado as informações = git config user.name
+
+- Adicionar tudo para área de preparação = git add . (o ponto é para adicionar tudo)
+
+- Comitar = git commit -m "criamos uma lista com 3 cursos"
+
+- Visualizar relatório = git log
+
+- Relatório minimizado em apenas uma linha (com hash) = git log --oneline
+
+- Acessar commit no momento/tempo especifico usando a hash = git checkout <hash>
+
+- Para ir até o commit mais atual = git checkout master
+
+- Criar branch (ramos) = git branch funcionario
+
+- Trocar entre branch e commits = git checkout <branch>
+
+- Saber se tem algum acesso remoto vinculado = git remote -v
+
+- Adicionar repositório remoto (usa-se origen) = git remote add origin <origin é um apelido basico usado para o link> <link do git> 
+
+- Enviar para o GITHUB ramo por ramo = git push origin <branch>
+
+- clonar = git clone <link>
+
+- Enviar as alterações (commits) feitas em um repositório local para um repositório remoto no serviço de hospedagem (GitHub) = git push origin master
+
+- atualizar o repositório local com as mudanças mais recentes do repositório remoto = git pull origin master

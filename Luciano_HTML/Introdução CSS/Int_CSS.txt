@@ -1,0 +1,41 @@
+CSS é a estilização do HTML, ou seja, é quem dá a vida ao HTML
+existe # maneiras de adicionar estilos que é nosso CSS a minha página HTML
+
+1°- Inline = é o estilo que é realizado dentro da própria TAG (dentro da própria linha do código da TAG)
+
+Ex:
+<h2 style ="color: rgb(22,100,50); background-color:aquamarine">Texto</h2>
+
+2°- interna = é quando o estilo fica em um local específico (dentro da tag <head>) 
+
+EX: <style> 
+        img{
+            width: 100px ou 50%
+        }
+
+    </style>
+
+3° - externo: o estilo virá de um arquivo separado (dentro da tag <head>)
+
+Obs: Usamos a TAG de limkagem para usar o CSS (como padrão colocar em baixo do título )
+     A teag link abre e fecha em si mesma ex: <link "hdfjhbdf" "fdjbjfdh">   
+Cores no CSS (sintax):
+
+"color: 'nome da cor'"
+"color: 'Hezadecimal'"
+"color: 'rgb'"
+"background-color: mudar cor de fundo
+
+Elemento de largura do CSS:
+- width = (largura) a medidda é em pixel ou porcentagem
+- height =(altura) a medidda é em pixel ou porcentagem
+
+----- Seleção das Tags via CSS ----
+
+1- Pelo nome da Tag
+2- Pelo id da Tag
+3- Seleciona a Tag pelo atributo classe (para modificar varios ao mesmo tempo)
+
+---- Comentários no CSS----
+/* aqui fica o Comentário*/
+

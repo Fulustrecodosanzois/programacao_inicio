@@ -1,0 +1,26 @@
+-------------- TABELAS E FORMULÁRIO -------------------
+
+Objetivo das tabelas: Tem como objetivo maior, exibir dados de forma estruturada.
+Geralmente, utilizada para fazer listas.
+
+Tag utilizadas:
+
+      Criação de tabelas: <table> </table>
+      Criação de linhas: <tr> </tr>
+      criação de colunas: <td> </td>
+Obs: A Tag de colunas sempre fica dentro da Tag linha
+
+        Criação de cabeçalhos: <th> </th>
+        Obs: É preciso utilizar uma organização estrutural das tabelas.
+        Essa organização é feita por duas tags:
+                <thead> </thead> que serve para organizar o cabeçalho
+                <tbody> </tbody> que serve para organizar o corpo da tabela (linhas e colunas)
+
+        --------------- CSS das tabelas --------------------
+    No CSS, podemos editar o estilo inteiro das nossas tabelas.
+    Cabe a mim, como programador utilizar os métodos de seleção de tags
+    a serem manipuladas no css.
+
+        - Diretamente da Tag
+        - Pelo identificador (id, se utiliza '#')
+        - Pelas classes (class, é utilizado 'ponto')    

@@ -1,0 +1,41 @@
+----------- MONGO DB-----------
+
+basea-se em CHAVE / VALOR
+
+camelcase = usar a letra maiúscula no inicio de cada palavra
+
+kebab-case = o espaço é susbituido por hífin,
+
+snack_case = usa underline para separar palavras
+
+
+-------------- COMANDOS ------------------
+
+mostrar bancos = show dbs
+
+Visualizar coleções = show collections
+
+criar banco = use <banco>
+
+criar coleção = db.createCollection("produto")
+
+criar coleção inserindo dados= db.<coleção>.insertOne({<chave : valor})
+
+criar coleção com vários valore = db.usuário.insertMany([
+                                  ... {nome:"maria", idade:25},
+                                  ... {nome:"carlos", idade:56}])
+
+inserir um dado por vez = db.produto.insertOne({id:1, nome:"Arroz", preco:9.89, quantidade:12})
+
+visualizar os valores da coleção = db.produto.find()
+
+listar documentos específico = db.produto.find({}<indica que quer a exibição de todos> , {nome:1, _id:0})<usa-se o "0" no _id para que oculte o id do registro>
+
+busca expecífica (where em mysql) = db.produto.find({id:1}) <mostrará apenas os ids com valor 1>
+
+busca condicional = db.produto.find(
+... {preco:{$lte:5}}
+         less/greater than or equal
+             menor/maior que 
+
+                    db.produto.find({preco:{$gt: 2, $lt:9})    

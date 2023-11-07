@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;/* permite modelar e estilizar os elementos*/
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    font-family: helvetica, arial, sans-serif;
+    height: 90vh; /* para fazer o espaçamento individual dos elementos em um único container */
+}
+
+#containerPrincipal {
+   
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;/* permite que os elementos fiquem alinhados um ao lado do outro*/
+    align-items: center;
+    width: 70vw;
+}
+
+.infor {
+    width: 600px;
+    margin-bottom: 125px;
+}
+
+h3 {
+    font-weight: normal;  /*controle do negrito*/
+    font-size: 24px; 
+    width: 72%;
+}
+
+.containerLogin {
+    /*border: 2px solid blue;*/
+    width: 400px;
+    display: flex;
+    flex-direction: column;  /*o flex-direction permite dizer a direção de alinhamento do objeto*/ /*alinhar os elementos um abaixo do outro (em coluna)*/
+    align-items: center;
+    gap: 1rem; /* O gap define o tamanho de um intervalo entre linhas e colunas da minha div ou container*/
+    
+}
+
+.login {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0/10%), 0 8px 16px rgb(0 0 0/10%); /*criar sombreamento de container*/
+    
+}
+
+input {
+    border: 1px solid #dddfe2;
+    border-radius: 6px; /* controle de raio da borda (grossura)*/
+    padding: 25px;
+    width: 100%;
+    height: 22px;
+    font-size: 17px;
+    color: #1d2129;
+    outline: none;  /*efeito da lista de seleção do input*/
+}
+
+input:focus { /* efeito de foco nas bordas selecionada*/
+    border-color: #1b74e4;
+    box-shadow: 0 0 0 2px #f0f2f5;
+    
+}
+
+.btn {
+    cursor: pointer;
+    
+    border-radius: 6px; /*arredondar cantos*/
+    width: 100%;
+    color: #fff;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+}
+
+.btnLogin {
+    background-color: #1877f2;
+}
+
+.btnLogin:hover {  /*efeito de seleção ao passar o mouse*/
+    background-color: #1b74e4;
+}
+
+.btncriar {
+    width: 50%;
+    font-size: 17px;
+    background-color: #42b72a;
+    padding: 16px 16px; /* altura e largura */
+
+}
+
+.btncriar:hover {
+    background-color: #36a420;
+}
+
+.link {
+    color: #1877f2;
+    text-decoration: none; /* Decorações aplicadas à fonte usada para o texto de um elemento*/
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid #f0f2f5;
+}
+
+.linkP {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.linkP:hover {
+    text-decoration: underline;
+}
+ 
+p {
+    text-align: center;
+}
+
+h1 {
+    color: #1877f2;
+    font-size: 63.5px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

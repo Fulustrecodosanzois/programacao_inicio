@@ -1,0 +1,30 @@
+-------------------  Formulário ------------------------
+
+Objetivo: comumente usado para fazer páginas ou telas de login ou cadadastro.
+
+                        ---- Tags para criar Formulário ----
+
+<form> </form> -- para criar formulários (todas as tags serão declaradas dentro detsa tag)
+<label> </label> -- rótulos ou legendas dos campos
+<input/> -- Para criar os campos de interação com o usuário (incerção de dados)
+
+                    ----- Tipos de input -----
+
+type: "text"
+type:  "number"
+type:  "password"
+type:  "email"
+type:  "checkbox" (caixa de seleção)
+type:  "date"
+type:  "radio" (é usada com o atributo name)
+
+Obs: Para o padrão de programação, 
+podemos usar o atributo name para todos os input.
+
+Obs 2: existe mais duas tags bastante utilizadas: 
+<select> </select> -- utilizada para selecionar varias opções que aparecem no campos
+
+Obs 'select": necessita da Tag <option> </option>
+
+
+

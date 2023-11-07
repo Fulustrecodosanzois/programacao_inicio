@@ -1,0 +1,93 @@
+<!DOCTYPE html><!--Informa ao navegador qual tipo de documento-->
+<html><!--Inicia o html (abre o código)-->
+    <head><!--Configurações específicas da página (parte superior, parte principal)-->
+        <meta charset="utf-8"/><!--Aceitar caracteres para inserir no documento html-->
+        <title>index</title><!--Título da aba da página web-->
+    </head>
+    <body><!--Corpo da página ou nosso container principal-->
+
+        <!--Tags de Títulos-->
+        <h1>Títulos principais ou 1° título principal</h1>
+        <h2>Título principal 2 ou Subtitulo 1</h2>
+        <h3>subtitulo 2</h3>
+        <h4>subtitulo 3</h4>
+        <h5>subtitulo 4</h5>
+        <h6>subtitulo 5</h6>
+        
+        <!--Tag de parágrafos, ou seja, para incluir textos-->
+        <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+
+        <!--Tag para uma linha de texto-->        
+        <span>Digitar qualquer coisa</span>
+        <br>                    <!--tag para quebrar de linha do span-->
+        <span> Alekerson</span>
+
+            <!--
+                tags de manipulações da fonte de texto!
+                Negrito 1: <strong> </strong>
+                Negrito 2: <b> </b>
+
+                italico 1: <i> </i>
+                italico 2: <em> </em> 
+            -->
+            <p><strong>Texto negrito 1</strong></p>
+
+            <p><b>Texto negrito 2</b></p>
+
+            <p><i>Texto ilatico 1</i></p>
+
+            <p><em>Texto italico 2</em></p>
+            
+            <!--Tag para colocar uma imagem
+            Imagem online (src=search e em pt = origem)
+            (alt= legenda da imagem quando não aparecer a iamgem)
+            -->
+            <img
+                src="https://www.google.com.br/google.jpg"
+                alt="logo do google"
+            />
+            <br>
+            <br>
+            <!--Tem que criar uma pasta dentro de estrutura com o nome de "src".
+                dentro de "src" cria outra pasta com o nome de "images" e botar
+                dentro dessa pasta a iamgem que quer botar no projeto 
+                e com um nome facíl ("./" procura as pastas dentro da pasta que o vs code criou)
+            -->
+            <img
+                src="./src/images/senai.jpg"
+            />
+            <br/>
+            <br/>
+            <!--tag para colocar um botão-->
+            <button>Clique aqui</button>
+            <br>
+            <!--Tag de link, que vai direcionar a outro site(dentro das aspas bote um link  e fora dela o nome do link)-->
+            <a href="https://www.google.com">link do google</a>
+            <br>
+            <br>
+            <!--Como colocar um link dentro de um botão-->
+            <a href="https://www.google.com.br">
+                <button>google</button>
+            </a>
+            <br>
+            <!--segunda maneira de botar um link dentro de um botão-->
+            <button><a href="https://www,google.com.br"> google 2</a></button>
+
+            <!-- Tag para inserir uma lista de elementos-->
+            <!--exemplo: lista desordenada-->
+            <h3 style="color: rgb(22,100,50); background-color: aquamarine;">Receita de bolo</h3>
+            <ul>
+                <li>Fermento</li>
+                <li>Ovo</li>
+                <li>Trigo</li>
+                <li>Leite</li>
+            </ul>
+            <!--exemplo: Lista ordenada-->
+            <h3> Lista de campeões</h3>
+            <ol>
+                <li>argentina</li>
+                <li>França</li>
+                <li>Croácia</li>
+            </ol>
+    </body> <!-- fechamento do corpo do porgrama-->
+</html> <!--fechamento do programa-->
